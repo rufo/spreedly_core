@@ -1,7 +1,11 @@
 require 'set'
 
 require 'active_support'
-require 'active_support/core_ext/object/blank'
+begin
+  nil.blank?
+rescue NoMethodError => e
+  require 'active_support/core_ext/object/blank'
+end
 require 'httparty'
 
 require 'spreedly_core/base'
