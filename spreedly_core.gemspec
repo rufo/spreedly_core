@@ -16,7 +16,8 @@ Gem::Specification.new do |s|
   s.files            += Dir.glob("man/**/*")
   s.files            += Dir.glob("test/**/*")
 
-  s.add_runtime_dependency     'httparty', '0.7.7'
+  s.add_runtime_dependency     'httparty'
+  s.add_runtime_dependency     'activesupport'
 
   s.add_development_dependency 'ruby-debug'
   s.add_development_dependency 'rake', '0.8.7'

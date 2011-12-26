@@ -1,5 +1,7 @@
 require 'set'
 
+require 'active_support'
+require 'active_support/core_ext/object/blank'
 require 'httparty'
 
 require 'spreedly_core/base'

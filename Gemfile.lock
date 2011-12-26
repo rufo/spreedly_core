@@ -2,16 +2,20 @@ PATH
   remote: .
   specs:
     spreedly_core (0.0.4)
-      httparty (= 0.7.7)
+      activesupport
+      httparty
 
 GEM
   remote: http://rubygems.org/
   specs:
+    activesupport (3.0.10)
     columnize (0.3.2)
-    crack (0.1.8)
-    httparty (0.7.7)
-      crack (= 0.1.8)
+    httparty (0.8.1)
+      multi_json
+      multi_xml
     linecache (0.43)
+    multi_json (1.0.4)
+    multi_xml (0.4.1)
     rake (0.8.7)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
