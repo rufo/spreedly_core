@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.files            += Dir.glob("test/**/*")
 
   s.add_runtime_dependency     'httparty', '~> 0.0'
-  s.add_runtime_dependency     'activesupport', '~> 3.0'
+  s.add_runtime_dependency     'activesupport'
   s.add_runtime_dependency     'builder'
 
   s.add_development_dependency "ruby-debug#{RUBY_VERSION =~ /1.9.\d/ ? "19" : ""}"
