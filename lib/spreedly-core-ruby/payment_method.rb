@@ -5,6 +5,8 @@ module SpreedlyCore
                 :last_name, :month, :number, :payment_method_type, :phone_number,
                 :state, :token, :updated_at, :verification_value, :year, :zip
 
+    attr_reader :raw_body
+
     # configure additional required fiels. Like :address1, :city, :state
     def self.additional_required_cc_fields *fields
       @@additional_required_fields ||= Set.new
@@ -21,7 +23,7 @@ module SpreedlyCore
       return nil if token.nil?
       verify_get("/payment_methods/#{token}.xml",
                  :has_key => "payment_method") do |response|
-        new(response.parsed_response["payment_method"])
+        new(response.parsed_response["payment_method"], response.body)
       end
     end
 
@@ -32,8 +34,9 @@ module SpreedlyCore
     end
 
     # Create a new PaymentMethod based on the attrs hash and then validate
-    def initialize(attrs={})
+    def initialize(attrs={}, raw_body = nil)
       super(attrs)
+      @raw_body = raw_body
       validate
     end
 
